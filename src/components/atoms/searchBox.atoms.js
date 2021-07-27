@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, TextInput} from 'react-native';
+import {View, TextInput, TouchableOpacity} from 'react-native';
 import propTypes from 'prop-types';
-import ButtonAtoms from './button.atoms';
+import TextAtoms from './text.atoms';
 import Styles from '../../styles';
 
 const {GeneralAtoms} = Styles.StyleSheets;
@@ -9,11 +9,12 @@ const {GeneralAtoms} = Styles.StyleSheets;
 function searchBoxAtoms(props) {
   return (
     <View style={GeneralAtoms.textInputWrap}>
-      <TextInput
-        style={GeneralAtoms.textInput}
-        placeholder="BENERIN STYLING BUTTON, MASIH STATIK"
-      />
-      <ButtonAtoms judul={props.button} />
+      <TextInput style={GeneralAtoms.textInput} placeholder="Cari Akun" />
+      <TouchableOpacity
+        style={GeneralAtoms.buttonWrap}
+        onPress={() => alert('Bisa')}>
+        <TextAtoms isi={props.button} />
+      </TouchableOpacity>
     </View>
   );
 }

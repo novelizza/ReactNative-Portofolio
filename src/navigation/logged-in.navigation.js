@@ -28,22 +28,22 @@ function LoggedIn() {
         },
       }}>
       <LoggedInTab.Screen
-        name="Github"
-        component={Pages.GithubPages}
-        options={{
-          headerTitle: 'Search',
-          tabBarIcon: ({color}) => {
-            return <FontAwesomeIcon icon={faSearch} size={20} color={color} />;
-          },
-        }}
-      />
-      <LoggedInTab.Screen
         name="Home"
         component={Pages.HomePages}
         options={{
           headerTitle: 'Home',
           tabBarIcon: ({color}) => {
             return <FontAwesomeIcon icon={faHome} size={20} color={color} />;
+          },
+        }}
+      />
+      <LoggedInTab.Screen
+        name="Github"
+        component={Pages.GithubPages}
+        options={{
+          headerTitle: 'Search',
+          tabBarIcon: ({color}) => {
+            return <FontAwesomeIcon icon={faSearch} size={20} color={color} />;
           },
         }}
       />

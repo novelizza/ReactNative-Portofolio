@@ -1,12 +1,15 @@
 import React from 'react';
-import {View, Image} from 'react-native';
+import {View, Image, FlatList} from 'react-native';
 import Atoms from '../atoms';
+import Molecules from '../molecules';
 import propTypes from 'prop-types';
 import Styles from '../../styles';
 
 const {GithubStyle} = Styles.StyleSheets;
 
 const {TextAtoms, SearchBoxAtoms} = Atoms;
+
+const {GithubListItemMolecules} = Molecules;
 
 function GithubOrganisms(props) {
   return (
@@ -16,7 +19,14 @@ function GithubOrganisms(props) {
         style={GithubStyle.githubLogo}
       />
       <SearchBoxAtoms button="Cari" />
-      <TextAtoms isi={props.data} />
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        legacyImplementation={false}
+        data={props.data}
+        renderItem={({item}) => <GithubListItemMolecules item={item} />}
+        keyExtractor={item => item.id}
+        style={GithubStyle.flatlist}
+      />
     </View>
   );
 }
